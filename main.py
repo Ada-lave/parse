@@ -2,7 +2,7 @@ from urllib.request import urlopen
 from anime import AnimeParser
 import schedule
 import logging
-
+print("Script running")
 def post_anime():
     pars = AnimeParser('https://animego.org/anime/random')
     pars.create_data_folder()
