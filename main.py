@@ -2,7 +2,10 @@ from urllib.request import urlopen
 from anime import AnimeParser
 import schedule
 import logging
+
+
 print("Script running")
+
 def post_anime():
     pars = AnimeParser('https://animego.org/anime/random')
     pars.create_data_folder()
@@ -18,10 +21,8 @@ def post_anime():
         
 
 def main():
-    
-    
-    
     schedule.every(4).hours.do(post_anime)
+    schedule.every(2).minutes.do(logging.info("I work "))
     
     while True:
         schedule.run_pending()
