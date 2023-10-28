@@ -19,10 +19,13 @@ def post_anime():
     except Exception as e:
         logging.error(f"Error: {e}")
         
-
+def test():
+   logging.info("I work ")
+   
+    
 def main():
     schedule.every(4).hours.do(post_anime)
-    schedule.every(2).minutes.do(logging.info("I work "))
+    schedule.every(2).minutes.do(test)
     
     while True:
         schedule.run_pending()
