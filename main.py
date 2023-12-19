@@ -4,9 +4,10 @@ import schedule
 import logging
 from threading import Timer
 
-print("Script running")
+
 
 def post_anime():
+    print("Script running")
     pars = AnimeParser('https://animego.org/anime/random')
     pars.create_data_folder()
     
@@ -22,7 +23,8 @@ def post_anime():
 
     
 def main():
-    Timer(9000, post_anime).start()
+    post_anime()
+    Timer(9000, main).start()
 main()
 
 
