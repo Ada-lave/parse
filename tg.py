@@ -1,8 +1,8 @@
-import os
-from dotenv import load_dotenv
+from threading import Timer
 
+# выполнять функцию hello() каждые 10 секунд
+def hello():
+    print("Привет, мир")
+    Timer(10, hello).start()
 
-load_dotenv()
-
-token = os.getenv('tg_tk')
-
+hello()

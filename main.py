@@ -2,7 +2,7 @@ from urllib.request import urlopen
 from anime import AnimeParser
 import schedule
 import logging
-
+from threading import Timer
 
 print("Script running")
 
@@ -22,14 +22,10 @@ def post_anime():
 
     
 def main():
-    schedule.every(4).hours.do(post_anime)
-    
-    while True:
-        schedule.run_pending()
+    Timer(9000, post_anime).start()
+main()
 
 
-if __name__ == "__main__":
-    main()
 
         
         
